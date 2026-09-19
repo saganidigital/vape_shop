@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA VAPOR LABS | Luxury Vapes, Pod Systems & Premium Flavors</title>
+  <meta name="description" content="Explore AURA VAPOR LABS - Next-generation smart disposable vapes, refillable pod systems, leak-proof mesh pods, and handcrafted premium e-liquid flavor bottles.">
+  <meta name="keywords" content="vape store, smart vapes, disposable vape, pod systems, replacement pods, e-liquid, flavor bottles, nic salt">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- Age Verification Gate Modal (21+) -->
+  <div class="modal-backdrop" id="ageModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="ageModalTitle">
+    <div class="modal-card">
+      <div class="age-modal-content">
+        <div class="age-badge-icon">21+</div>
+        <h2 class="age-modal-title" id="ageModalTitle">Age Verification Required</h2>
+        <p class="age-modal-desc">
+          The products on this website are intended exclusively for adults of legal smoking age (21+ in the United States or legal age in your jurisdiction). Please confirm your age before browsing.
+        </p>
+        <div class="age-modal-actions">
+          <button class="btn-age-confirm" id="btnAgeConfirm">I am 21 or Older</button>
+          <button class="btn-age-reject" id="btnAgeReject">Under 21 (Exit)</button>
+        </div>
+        <label class="age-remember-row">
+          <input type="checkbox" id="ageRememberCheckbox" checked>
+          <span>Remember my age verification on this device</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Special Offers">
+    <div class="announcement-content">
+      <span class="announcement-badge">Limited Drop</span>
+      <span>FREE 2-DAY EXPRESS SHIPPING ON ORDERS $50+</span>
+      <span>•</span>
+      <span>USE CODE: <span class="announcement-code" id="announcementCode" title="Click to copy">AURA20</span> FOR 20% OFF</span>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-logo" aria-label="Aura Vapor Labs Home">
+          <div class="brand-logo-icon">💨</div>
+          <div class="brand-name">
+            <span>AURA</span>
+            <span class="sub">Vapor Labs</span>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="#flavor-explorer" class="nav-link">Flavor Lab</a></li>
+          <li><a href="#catalog" class="nav-link">All Products</a></li>
+          <li><a href="#features" class="nav-link">Technology</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        </ul>
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+          <div class="search-box-header">
+            <span class="search-icon-header">🔍</span>
+            <input type="text" class="search-input-header" id="headerSearchInput" placeholder="Search devices, pods, flavors..." aria-label="Search store">
+          </div>
+
+          <div class="age-verified-badge" title="Verified Legal Adult Age">
+            <span>✓</span> 21+
+          </div>
+
+          <!-- Cart Drawer Toggle -->
+          <button class="cart-btn" id="cartToggleBtn" aria-label="Shopping Cart">
+            <span>🛒</span>
+            <span class="cart-label">Cart</span>
+            <span class="cart-count-badge" id="headerCartCount">0</span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Interactive Vapor Canvas -->
+    <section class="hero" id="hero">
+      <!-- Interactive Ambient Vapor Canvas -->
+      <canvas id="vaporCanvas" aria-hidden="true"></canvas>
+
+      <div class="container">
+        <div class="hero-content-wrapper">
+          <!-- Text Column -->
+          <div class="hero-text-col">
+            <div class="hero-pill-tag">
+              <span class="hero-pill-dot"></span>
+              <span>Next-Gen Vapor Architecture</span>
+            </div>
+
+            <h1 class="hero-title">
+              Engineered For <br>
+              <span class="animate-gradient-text">Pure Cloud</span> & Flavor
+            </h1>
+
+            <p class="hero-subtitle">
+              Immerse yourself in precision-crafted disposable vapes with real-time digital screens, leak-proof pod systems, and chef-curated flavor bottles formulated with medical-grade extracts.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#catalog" class="btn-primary">
+                <span>Explore Catalog</span>
+                <span>→</span>
+              </a>
+              <a href="#flavor-explorer" class="btn-secondary">
+                <span>Flavor Explorer</span>
+                <span>✨</span>
+              </a>
+            </div>
+
+            <!-- Trust Stats -->
+            <div class="hero-trust-stats">
+              <div class="hero-stat-item">
+                <span class="hero-stat-num">15,000+</span>
+                <span class="hero-stat-label">Max Puff Count</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-num">0.6Ω</span>
+                <span class="hero-stat-label">Honeycomb Mesh</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-num">100%</span>
+                <span class="hero-stat-label">Authentic & Tested</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-num">24h</span>
+                <span class="hero-stat-label">Fast Dispatch</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Column -->
+          <div class="hero-visual-col">
+            <div class="hero-visual-card animate-float-hero">
+              <div class="hero-glow-underlay animate-vapor-glow"></div>
+              <img src="assets/images/hero_vape_showcase.jpg" alt="Aura Titan Futuristic Smart Vape" class="hero-device-img animate-neon-pulse">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Category Cards -->
+    <section class="section-categories" id="categories">
+      <div class="container">
+        <div class="category-cards-grid">
+          <!-- Card 1: Vapes -->
+          <div class="category-card" onclick="filterByCategory('disposable')">
+            <div class="category-icon-box">🚀</div>
+            <h3 class="category-card-title">Disposable Vapes</h3>
+            <p class="category-card-desc">High puff counts up to 15,000 with smart LED e-liquid monitors & dual mesh heating.</p>
+            <span class="category-card-link">Browse Disposables →</span>
+          </div>
+
+          <!-- Card 2: Pod Systems -->
+          <div class="category-card" onclick="filterByCategory('pod-system')">
+            <div class="category-icon-box">⚡</div>
+            <h3 class="category-card-title">Pod Systems</h3>
+            <p class="category-card-desc">Aircraft-grade aluminum bodies with stepless airflow dials and magnetic pod snaps.</p>
+            <span class="category-card-link">Browse Devices →</span>
+          </div>
+
+          <!-- Card 3: Replacement Pods -->
+          <div class="category-card" onclick="filterByCategory('pods')">
+            <div class="category-icon-box">🔋</div>
+            <h3 class="category-card-title">Replacement Pods</h3>
+            <p class="category-card-desc">0.6Ω & 1.0Ω anti-leak magnetic cartridges with organic Japanese wicking cotton.</p>
+            <span class="category-card-link">Browse Pods →</span>
+          </div>
+
+          <!-- Card 4: Flavor Bottles -->
+          <div class="category-card" onclick="filterByCategory('e-liquid')">
+            <div class="category-icon-box">🧪</div>
+            <h3 class="category-card-title">Flavor Bottles</h3>
+            <p class="category-card-desc">60ml Chubby Gorilla bottles & 30ml rapid nicotine salts in handcrafted flavor profiles.</p>
+            <span class="category-card-link">Browse Flavors →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flavor Profile Explorer Section -->
+    <section class="flavor-explorer-section" id="flavor-explorer">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive Tasting Room</span>
+          <h2 class="section-title">Discover Your Signature Blend</h2>
+          <p class="section-desc">
+            Filter our lab-crafted flavor recipes by sensory profiles — from arctic menthol chills to decadent dessert custards and sun-ripened exotic fruits.
+          </p>
+        </div>
+
+        <!-- Flavor Filter Pills -->
+        <div class="flavor-nav-pills">
+          <button class="flavor-pill-btn active" data-flavor="all">
+            <span>✨</span> All Profiles
+          </button>
+          <button class="flavor-pill-btn" data-flavor="icy">
+            <span>❄️</span> Icy & Sub-Zero Menthol
+          </button>
+          <button class="flavor-pill-btn" data-flavor="fruity">
+            <span>🍓</span> Fruity & Sweet Citrus
+          </button>
+          <button class="flavor-pill-btn" data-flavor="tobacco">
+            <span>🍂</span> Oak Cask Tobacco & Custard
+          </button>
+          <button class="flavor-pill-btn" data-flavor="device">
+            <span>⚡</span> Pod Hardware
+          </button>
+          <button class="flavor-pill-btn" data-flavor="pods">
+            <span>🔋</span> Pod Cartridges
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Product Catalog Section -->
+    <section class="products-section" id="catalog">
+      <div class="container">
+        <!-- Catalog Toolbar -->
+        <div class="catalog-toolbar">
+          <!-- Category Tabs -->
+          <div class="category-tabs">
+            <button class="category-tab-btn active" data-category="all">All Collection</button>
+            <button class="category-tab-btn" data-category="disposable">Disposables</button>
+            <button class="category-tab-btn" data-category="pod-system">Pod Systems</button>
+            <button class="category-tab-btn" data-category="pods">Replacement Pods</button>
+            <button class="category-tab-btn" data-category="e-liquid">Flavor Bottles</button>
+          </div>
+
+          <!-- Controls: Search & Sort -->
+          <div class="toolbar-controls">
+            <div class="catalog-search-box">
+              <span class="catalog-search-icon">🔍</span>
+              <input type="text" class="catalog-search-input" id="catalogSearchInput" placeholder="Filter by keyword...">
+            </div>
+
+            <select class="sort-select" id="sortSelect" aria-label="Sort products">
+              <option value="featured">Featured / Bestselling</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Injected via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Aura / Feature Grid -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engineering Excellence</span>
+          <h2 class="section-title">The Aura Innovation Standard</h2>
+          <p class="section-desc">
+            Every device, pod cartridge, and flavor formulation is subjected to rigorous ISO-certified lab testing for pure vapor clarity.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item-card">
+            <div class="feature-icon-wrapper">🛡️</div>
+            <h3 class="feature-title">Quadruple Anti-Leak Tech</h3>
+            <p class="feature-desc">Patented ultrasonic sealing and dual silicone condensation reservoirs eliminate leakage even at high altitudes.</p>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="feature-icon-wrapper">🌿</div>
+            <h3 class="feature-title">100% Organic Japanese Cotton</h3>
+            <p class="feature-desc">Unbleached organic wicking fibers deliver clean, untainted flavor without dry hits or synthetic chemical byproducts.</p>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="feature-icon-wrapper">⚡</div>
+            <h3 class="feature-title">Smart Wattage Adaptation</h3>
+            <p class="feature-desc">Microprocessors auto-detect coil resistance in microseconds to deliver the optimal temperature curve for every puff.</p>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="feature-icon-wrapper">🧪</div>
+            <h3 class="feature-title">USP Pharmaceutical Extracts</h3>
+            <p class="feature-desc">Crafted with 99.9% pure pharmaceutical grade nicotine, certified diacetyl-free and acetoin-free flavorings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews / Testimonials -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Verified Community</span>
+          <h2 class="section-title">Loved by Cloud Enthusiasts</h2>
+          <p class="section-desc">Over 25,000+ satisfied vapers trust Aura Vapor Labs for daily reliability and authentic taste.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-stars">★★★★★</div>
+              <div class="review-verified">✓ Verified Buyer</div>
+            </div>
+            <p class="review-text">"The battery and juice display on the Titan 15k is game changing. No more guessing when your disposable is about to die. Dual mesh coil produces insanely thick, flavorful clouds!"</p>
+            <div class="review-author-info">
+              <div class="review-author-name">Julian K.</div>
+              <div class="review-product-tag">Purchased: Aura Titan 15,000 Puffs</div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-stars">★★★★★</div>
+              <div class="review-verified">✓ Verified Buyer</div>
+            </div>
+            <p class="review-text">"Hands down the best dessert tobacco on the market. You can genuinely taste the oak wood and smooth bourbon note on the exhale. Absolutely top shelf quality."</p>
+            <div class="review-author-info">
+              <div class="review-author-name">Marcus V.</div>
+              <div class="review-product-tag">Purchased: Golden Reserve Vanilla Bourbon (60ml)</div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-stars">★★★★★</div>
+              <div class="review-verified">✓ Verified Buyer</div>
+            </div>
+            <p class="review-text">"The brushed gunmetal finish feels super premium in the hand. Zero leaking from the pods after 3 weeks of daily use. Airflow control is buttery smooth."</p>
+            <div class="review-author-info">
+              <div class="review-author-name">Elena R.</div>
+              <div class="review-product-tag">Purchased: Aeterna Nexus Pod System</div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-stars">★★★★★</div>
+              <div class="review-verified">✓ Verified Buyer</div>
+            </div>
+            <p class="review-text">"The menthol blast in Cosmic Berry is so crisp and clean without overpowering the sweet berry flavor. Reordering my 3rd bottle right now!"</p>
+            <div class="review-author-info">
+              <div class="review-author-name">Chloe T.</div>
+              <div class="review-product-tag">Purchased: Cosmic Berry Freeze (60ml)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & Battery Safety Accordion -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Knowledge Base</span>
+          <h2 class="section-title">Safety, Pod Care & FAQ</h2>
+          <p class="section-desc">Everything you need to know about battery care, pod maintenance, and e-liquid storage.</p>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              <span>How should I store my e-liquid flavor bottles for maximum freshness?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              Store bottles in a cool, dark place away from direct sunlight and extreme temperatures. Nicotine and delicate flavor compounds degrade under UV exposure. Always ensure the child-resistant cap is tightly sealed after each refill.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>What is the difference between Freebase and Nicotine Salt (Nic-Salt)?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              Nicotine salts have a lower pH balance, allowing for higher nicotine concentrations (e.g. 25mg - 50mg) with a silky-smooth throat hit, making them ideal for compact pod devices. Freebase nicotine provides a more pronounced throat hit at lower strengths (e.g. 3mg - 6mg) and is best suited for high-wattage sub-ohm cloud chasing.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>How long does each Nexus Replacement Pod last?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              Each Nexus Pro pod lasts between 10 to 14 days under average vaping conditions (or approximately 4,500 puffs). If you notice a reduction in vapor density or a subtle change in flavor clarity, it's time to replace the pod.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Are Aura devices safe to charge overnight?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              Aura devices feature integrated overcharge, overcurrent, and short-circuit protection chips. However, for maximum lithium-ion battery longevity, we recommend disconnecting the device once the smart OLED screen indicates 100% charge (typically under 35 minutes via Type-C).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter VIP Club -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-box">
+          <span class="section-tag" style="color: var(--accent-cyan);">Join the Inner Circle</span>
+          <h2 class="section-title">Unlock $10 Off Your First Order</h2>
+          <p class="section-desc">Get secret flash sale access, limited edition flavor notifications, and VIP tasting invitations.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address">
+            <button type="submit" class="btn-primary">Claim $10 Coupon</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- 21+ Nicotine Warning Banner -->
+      <div class="footer-warning-banner">
+        <div class="warning-icon">⚠️</div>
+        <div>
+          <strong>WARNING:</strong> This product contains nicotine. Nicotine is an addictive chemical. Only for use by adults of legal age (21+). Keep out of reach of children and pets. Not for sale to minors.
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-logo-icon">💨</div>
+            <div class="brand-name">
+              <span>AURA</span>
+              <span class="sub">Vapor Labs</span>
+            </div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 320px; margin-bottom: 20px;">
+            Crafting futuristic vapor hardware, intelligent disposable bars, and artisanal e-liquid recipes with relentless dedication to quality.
+          </p>
+          <div style="display: flex; gap: 12px; font-size: 1.2rem;">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="Discord">💬</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Categories -->
+        <div>
+          <h4 class="footer-col-title">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog" onclick="filterByCategory('disposable')">Disposable Vapes</a></li>
+            <li><a href="#catalog" onclick="filterByCategory('pod-system')">Pod Systems</a></li>
+            <li><a href="#catalog" onclick="filterByCategory('pods')">Replacement Pods</a></li>
+            <li><a href="#catalog" onclick="filterByCategory('e-liquid')">Flavor Bottles (60ml)</a></li>
+            <li><a href="#catalog" onclick="filterByCategory('e-liquid')">Nicotine Salts (30ml)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Care -->
+        <div>
+          <h4 class="footer-col-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Device Verification</a></li>
+            <li><a href="#hero">Track Your Order</a></li>
+            <li><a href="#features">Battery Safety Guide</a></li>
+            <li><a href="#features">Recycling Program</a></li>
+            <li><a href="#reviews">Wholesale Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal & Compliance -->
+        <div>
+          <h4 class="footer-col-title">Compliance</h4>
+          <ul class="footer-links">
+            <li><a href="#">Age Verification Policy (21+)</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy & Cookie Policy</a></li>
+            <li><a href="#">FDA Compliance Notice</a></li>
+            <li><a href="#">Shipping Restrictions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 AURA VAPOR LABS INC. All rights reserved. Demo storefront for presentation purposes.
+        </div>
+        <div style="display: flex; gap: 14px; font-size: 1.1rem; filter: grayscale(1) brightness(1.5);">
+          <span>💳 Visa</span>
+          <span>💳 Mastercard</span>
+          <span>💳 Amex</span>
+          <span>🍏 Apple Pay</span>
+          <span>🤖 Google Pay</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-backdrop" id="quickViewModalBackdrop" role="dialog" aria-modal="true" aria-label="Product Quick View">
+    <div class="modal-card quick-view-card">
+      <button class="modal-close-btn" id="quickViewCloseBtn" aria-label="Close modal">✕</button>
+      <div id="quickViewContent" style="display: contents;">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop">
+    <div class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart Drawer">
+      <!-- Drawer Header -->
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <span>🛒</span>
+          <span>Your Vapor Bag</span>
+          <span class="cart-count-badge" id="drawerCartCount">0</span>
+        </div>
+        <button class="modal-close-btn" id="cartCloseBtn" aria-label="Close Cart">✕</button>
+      </div>
+
+      <!-- Free Shipping Tracker -->
+      <div class="free-shipping-tracker">
+        <div class="free-shipping-text" id="freeShippingText">
+          Add <strong>$50.00</strong> more for FREE shipping!
+        </div>
+        <div class="free-shipping-bar">
+          <div class="free-shipping-fill" id="freeShippingFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Injected via app.js -->
+      </div>
+
+      <!-- Drawer Footer & Totals -->
+      <div class="cart-drawer-footer">
+        <div class="cart-promo-row">
+          <input type="text" class="promo-input" id="promoCodeInput" placeholder="Promo code (e.g. AURA20)">
+          <button class="btn-apply-promo" id="applyPromoBtn">Apply</button>
+        </div>
+
+        <div class="cart-totals-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotalText">$0.00</span>
+        </div>
+        <div class="cart-totals-row" id="cartDiscountRow" style="display: none; color: var(--accent-cyan);">
+          <span>Discount (AURA20)</span>
+          <span id="cartDiscountText">-$0.00</span>
+        </div>
+        <div class="cart-totals-row">
+          <span>Shipping</span>
+          <span id="cartShippingText">$5.99</span>
+        </div>
+        <div class="cart-totals-row total">
+          <span>Total</span>
+          <span id="cartTotalText">$0.00</span>
+        </div>
+
+        <button class="btn-checkout" id="btnCheckout">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simulated Checkout Modal -->
+  <div class="modal-backdrop" id="checkoutModalBackdrop" role="dialog" aria-modal="true" aria-label="Checkout Modal">
+    <div class="modal-card" style="max-width: 500px; padding: 32px;">
+      <button class="modal-close-btn" id="checkoutCloseBtn" aria-label="Close Checkout">✕</button>
+      <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; margin-bottom: 6px;">Express Checkout Demo</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Complete your simulated order. No real payment required.</p>
+      
+      <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: #cbd5e1;">Full Name</label>
+          <input type="text" required value="Alex Mercer" style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 14px; color: #fff; outline: none;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: #cbd5e1;">Shipping Address</label>
+          <input type="text" required value="742 Evergreen Terrace, Springfield, OR" style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 14px; color: #fff; outline: none;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: #cbd5e1;">Payment Method</label>
+          <select style="width: 100%; background: #161924; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 14px; color: #fff; outline: none;">
+            <option>Credit Card (•••• 4242)</option>
+            <option>Apple Pay</option>
+            <option>Google Pay</option>
+          </select>
+        </div>
+        <div style="background: rgba(0, 242, 254, 0.08); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 8px; padding: 12px; font-size: 0.8rem; color: #e0f2fe;">
+          🛡️ 256-Bit Encrypted Demo Transaction with Adult Signature Verification on Delivery.
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px; justify-content: center;">
+          Complete Demo Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/vapor-canvas.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    // Quick helper for category filter shortcuts from cards or footer
+    function filterByCategory(cat) {
+      const tab = document.querySelector(`.category-tab-btn[data-category="${cat}"]`);
+      if (tab) {
+        tab.click();
+        const catalogEl = document.getElementById('catalog');
+        if (catalogEl) {
+          catalogEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  </script>
+</body>
+</html>

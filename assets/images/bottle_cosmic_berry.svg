@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="berryBgGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#9d4edd" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#00f2fe" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#090a0f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="berryLiquid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7209b7"/>
+      <stop offset="50%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <linearGradient id="glassReflection" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="70%" stop-color="#00f2fe" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2b2d42"/>
+      <stop offset="35%" stop-color="#4a4e69"/>
+      <stop offset="70%" stop-color="#1b1d28"/>
+      <stop offset="100%" stop-color="#0e0f17"/>
+    </linearGradient>
+    <linearGradient id="labelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13141f"/>
+      <stop offset="50%" stop-color="#0c0d15"/>
+      <stop offset="100%" stop-color="#1a1c2b"/>
+    </linearGradient>
+    <filter id="liquidGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Glow & Floor Reflection -->
+  <rect width="500" height="500" fill="#090a0f"/>
+  <circle cx="250" cy="270" r="190" fill="url(#berryBgGlow)"/>
+  <ellipse cx="250" cy="435" rx="130" ry="20" fill="#7209b7" opacity="0.3" filter="url(#liquidGlow)"/>
+  <ellipse cx="250" cy="435" rx="100" ry="12" fill="#050608"/>
+
+  <!-- Bottle Group -->
+  <g id="eLiquidBottle" transform="translate(145, 45)">
+    <!-- Dropper / Gorilla Cap Needle Tip -->
+    <path d="M 98,15 L 112,15 L 115,48 L 95,48 Z" fill="#0c0d14"/>
+    <ellipse cx="105" cy="15" rx="7" ry="2.5" fill="#4a4e69"/>
+
+    <!-- Ribbed Cap (Child-Resistant Chubby Gorilla Cap) -->
+    <rect x="75" y="48" width="60" height="65" rx="6" fill="url(#capGrad)" stroke="#3a3d52" stroke-width="1"/>
+    <!-- Cap Ridges -->
+    <line x1="83" y1="52" x2="83" y2="108" stroke="#11121a" stroke-width="2"/>
+    <line x1="91" y1="52" x2="91" y2="108" stroke="#11121a" stroke-width="2"/>
+    <line x1="99" y1="52" x2="99" y2="108" stroke="#11121a" stroke-width="2"/>
+    <line x1="107" y1="52" x2="107" y2="108" stroke="#11121a" stroke-width="2"/>
+    <line x1="115" y1="52" x2="115" y2="108" stroke="#11121a" stroke-width="2"/>
+    <line x1="123" y1="52" x2="123" y2="108" stroke="#11121a" stroke-width="2"/>
+    <!-- Cap Rim ring -->
+    <rect x="72" y="105" width="66" height="12" rx="3" fill="#1b1d28" stroke="#00f2fe" stroke-width="0.6" stroke-opacity="0.4"/>
+
+    <!-- Bottle Neck -->
+    <rect x="80" y="117" width="50" height="16" fill="#1e202e" opacity="0.9"/>
+
+    <!-- Bottle Body (Chubby 60ml Cylinder) -->
+    <!-- Base Shape -->
+    <path d="M 40,150 C 40,130 75,128 80,128 L 130,128 C 135,128 170,130 170,150 L 170,360 C 170,378 150,385 105,385 C 60,385 40,378 40,360 Z" fill="#10121d" stroke="#00f2fe" stroke-width="1.2" stroke-opacity="0.5"/>
+
+    <!-- Rich Vibrant E-Liquid Level -->
+    <path d="M 42,165 C 42,150 75,145 80,145 L 130,145 C 135,145 168,150 168,165 L 168,358 C 168,374 150,382 105,382 C 60,382 42,374 42,358 Z" fill="url(#berryLiquid)"/>
+    <!-- Liquid Surface Meniscus -->
+    <ellipse cx="105" cy="165" rx="63" ry="9" fill="#b5179e" opacity="0.8"/>
+    <ellipse cx="105" cy="165" rx="55" ry="6" fill="#f72585" opacity="0.5"/>
+
+    <!-- Air Bubbles Inside Liquid -->
+    <circle cx="70" cy="220" r="4.5" fill="#ffffff" opacity="0.4"/>
+    <circle cx="74" cy="216" r="1.5" fill="#ffffff" opacity="0.7"/>
+    <circle cx="145" cy="270" r="6" fill="#ffffff" opacity="0.35"/>
+    <circle cx="148" cy="266" r="2" fill="#ffffff" opacity="0.6"/>
+    <circle cx="85" cy="340" r="3.5" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Luxury Label Wrap -->
+    <rect x="42" y="195" width="126" height="150" fill="url(#labelGrad)" stroke="#7209b7" stroke-width="0.8"/>
+    <!-- Neon Label Accents -->
+    <line x1="42" y1="195" x2="168" y2="195" stroke="#00f2fe" stroke-width="2"/>
+    <line x1="42" y1="345" x2="168" y2="345" stroke="#f72585" stroke-width="2"/>
+    
+    <!-- Label Typography & Branding -->
+    <text x="105" y="222" font-family="'Outfit', sans-serif" font-size="11" font-weight="800" fill="#00f2fe" text-anchor="middle" letter-spacing="2">AURA VAPOR</text>
+    <text x="105" y="244" font-family="'Outfit', sans-serif" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">COSMIC</text>
+    <text x="105" y="262" font-family="'Outfit', sans-serif" font-size="15" font-weight="900" fill="#f72585" text-anchor="middle" letter-spacing="1">BERRY FREEZE</text>
+    
+    <!-- Flavor Badges on Label -->
+    <rect x="58" y="278" width="94" height="18" rx="9" fill="#240046" stroke="#9d4edd" stroke-width="0.8"/>
+    <text x="105" y="290" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#e0aaff" text-anchor="middle">ARCTIC MENTHOL</text>
+
+    <!-- Specs on Label -->
+    <text x="105" y="318" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#8e9bb0" text-anchor="middle">60ML · 70VG / 30PG · 3MG</text>
+    <text x="105" y="333" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="600" fill="#5c677d" text-anchor="middle">PREMIUM CRAFTED E-LIQUID</text>
+
+    <!-- Glass Bottle Reflections & Highlights -->
+    <path d="M 44,145 L 62,145 L 62,370 L 44,360 Z" fill="url(#glassReflection)"/>
+    <line x1="162" y1="145" x2="162" y2="370" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.35"/>
+    <ellipse cx="105" cy="382" rx="60" ry="4" fill="#00f2fe" opacity="0.4"/>
+  </g>
+</svg>

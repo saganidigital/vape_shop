@@ -1,0 +1,160 @@
+/**
+ * AURA VAPOR LABS - Animation Keyframes & Dynamic Effects
+ */
+
+@keyframes floatHeroDevice {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(1.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes floatBadge {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes neonAuraPulse {
+  0% {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(157, 78, 221, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(0, 242, 254, 0.45), 0 0 65px rgba(157, 78, 221, 0.3), inset 0 0 25px rgba(0, 242, 254, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(157, 78, 221, 0.1);
+  }
+}
+
+@keyframes vaporGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes marqueeAnnouncement {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes modalBackdropFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(16px);
+  }
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes cartSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Reusable Animation Utility Classes */
+.animate-float-hero {
+  animation: floatHeroDevice 6s ease-in-out infinite;
+}
+
+.animate-float-badge-1 {
+  animation: floatBadge 4.5s ease-in-out infinite;
+}
+
+.animate-float-badge-2 {
+  animation: floatBadge 5.5s ease-in-out infinite 1s;
+}
+
+.animate-float-badge-3 {
+  animation: floatBadge 4s ease-in-out infinite 0.5s;
+}
+
+.animate-neon-pulse {
+  animation: neonAuraPulse 4s ease-in-out infinite;
+}
+
+.animate-vapor-glow {
+  animation: vaporGlow 7s ease-in-out infinite;
+}
+
+.animate-gradient-text {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 25%, #9d4edd 50%, #f72585 75%, #00f2fe 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
